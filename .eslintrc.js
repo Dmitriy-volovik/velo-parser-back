@@ -21,6 +21,7 @@ module.exports = {
   ],
   rules: {
     'import/prefer-default-export' : 'off',
-    "class-methods-use-this" : 'off'
+    'class-methods-use-this' : 'off',
+    'no-return-await': 'off'
   },
 };

@@ -2,7 +2,7 @@ import {
   Controller, Get, Query,
 } from '@nestjs/common';
 // import axios from 'axios';
-import { TSearchResult } from '../type';
+import { TSearchResult } from '../../type';
 import { SearchService } from './search.service';
 
 type TSearchQuery = {
@@ -18,7 +18,6 @@ export class SearchController {
     console.log('KakaXa - ', query);
 
     const result = await this.searchService.getData(query.q);
-    // const result1 = await this.searchService.getDataVelostyle(query.q);
     console.log('result - ', result);
     return result;
   }

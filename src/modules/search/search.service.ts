@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
-import { shopsNames } from '../const/const';
-import { TSearchResult, TShops } from '../type';
+import { shopsNames } from '../../const/const';
+import { TSearchResult, TShops } from '../../type';
 
 type ShopMethods = Record<TShops, (search: string) => Promise<TSearchResult[]>>;
 

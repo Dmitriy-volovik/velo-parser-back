@@ -15,8 +15,6 @@ export class SearchController {
 
   @Get('/search')
   public async getData(@Query() query: TSearchQuery): Promise<TSearchResult[]> {
-    console.log('KakaXa - ', query);
-
     const result = await this.searchService.getData(query.q);
     console.log('result - ', result);
     return result;

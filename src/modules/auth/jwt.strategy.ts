@@ -17,16 +17,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       ignoreExpiration: false,
       secretOrKey: configService.get<string>('JWT_SECRET'),
     });
-
-    console.log('JwtStrategy int');
   }
 
   async validate(payload: any, done: Function) {
-    // console.log('validate ', payload);
+    console.log('validate JWT strategy payload - ', payload);
     // return { userId: payload.sub, username: payload.username };
     const user = await this.authService.validateUserToken(payload);
     if (!user) {
-      return done(new UnauthorizedException('123'), false);
+      return done(new UnauthorizedException(), false);
     }
     return done(null, user);
   }

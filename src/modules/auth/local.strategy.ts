@@ -17,17 +17,15 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
       passwordField: 'password',
     //   passReqToCallback: true,
     });
-    console.log('local strat init');
   }
 
   private readonly logger = new Logger(AuthService.name);
 
   async validate(username: string, password: string): Promise<User> {
-    console.log('local');
     const user = await this.authService.validateUser(username, password);
     this.logger.log(user);
     if (!user) {
-      throw new UnauthorizedException();
+      throw new UnauthorizedException('wrong email or password');
     }
     return user;
   }

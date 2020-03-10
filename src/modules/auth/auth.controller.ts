@@ -1,5 +1,5 @@
 import {
-  Controller, Post, Response, Request, Body, HttpStatus, UseGuards,
+  Controller, Post, Response, Request, Body, HttpStatus, UseGuards, Get,
 } from '@nestjs/common';
 
 import { AuthService } from './auth.service';

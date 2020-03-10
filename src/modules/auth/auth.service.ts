@@ -52,7 +52,7 @@ export class AuthService {
       email: user.email,
     };
     return {
-      hi: 'hohohoh',
+      expiresIn: '2 days',
       access_token: this.jwtService.sign(payload),
     };
   }

@@ -28,7 +28,7 @@ export class AuthService {
     try {
       await this.userService.register(user);
     } catch (err) {
-      status = { success: false, message: err };
+      status = { success: false, message: err.message };
     }
     return status;
   }
